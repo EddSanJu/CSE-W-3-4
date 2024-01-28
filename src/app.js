@@ -14,7 +14,7 @@ conection();
 app.use('/api', userRoutes, memorieRoutes);
 
 app.get('/', (req, res) => {
-  res.send('API running correctly');
+  res.send(`API Docs available at route "URL/api/docs"`);
 });
 
 const PORT = process.env.PORT || 3000;
