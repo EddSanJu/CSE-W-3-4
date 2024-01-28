@@ -1,0 +1,93 @@
+# Get all the users
+GET http://localhost:3000/api/users
+Accept: application/json
+
+###
+
+# Get a user by ID
+GET http://localhost:3000/api/users/1234567890abcdef12345678
+Accept: application/json
+
+###
+
+# Create a new user
+POST http://localhost:3000/api/create-user
+Content-Type: application/json
+Accept: application/json
+
+{
+    "userName": "newuser",
+    "email": "newuser@example.com",
+    "phone": 1234567890,
+    "firstName": "New",
+    "lastName": "User",
+    "country": "Some Country",
+    "city": "Some City"
+}
+
+###
+
+# Update an existing user
+PUT http://localhost:3000/api/update-user/1234567890abcdef12345678
+Content-Type: application/json
+Accept: application/json
+
+{
+    "userName": "updateduser",
+    "email": "updateduser@example.com",
+    "phone": 9876543210,
+    "firstName": "Updated",
+    "lastName": "User",
+    "country": "Updated Country",
+    "city": "Updated City"
+}
+
+###
+
+# Delete a user
+DELETE http://localhost:3000/api/delete-user/1234567890abcdef12345678
+Accept: application/json
+
+# Get all the memories
+GET http://localhost:3000/api/memories
+Accept: application/json
+
+###
+
+# Get a memory by ID
+GET http://localhost:3000/api/memories/1234567890abcdef12345678
+Accept: application/json
+
+###
+
+# Create a new memory
+POST http://localhost:3000/api/create-memorie
+Content-Type: application/json
+Accept: application/json
+
+{
+    "title": "My Summer Vacation",
+    "content": "It was a wonderful experience visiting the beach...",
+    "creationDate": "2023-07-21",
+    "imgUrl": "http://example.com/myimage.jpg"
+}
+
+###
+
+# Update an existing memory
+PUT http://localhost:3000/api/update-memorie/1234567890abcdef12345678
+Content-Type: application/json
+Accept: application/json
+
+{
+    "title": "My Winter Adventure",
+    "content": "Exploring the snowy mountains was exhilarating...",
+    "creationDate": "2023-12-13",
+    "imgUrl": "http://example.com/newimage.jpg"
+}
+
+###
+
+# Delete a memory
+DELETE http://localhost:3000/api/delete-memorie/1234567890abcdef12345678
+Accept: application/json
