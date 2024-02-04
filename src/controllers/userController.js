@@ -24,6 +24,7 @@ const getUserById = async (req, res) => {
 };
 
 const createUser = async (req, res) => {
+
   const user = new User({
     userName: req.body.userName,
     email: req.body.email,
@@ -31,7 +32,8 @@ const createUser = async (req, res) => {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     country: req.body.country,
-    city: req.body.city
+    city: req.body.city,
+    password: req.body.password
   });
 
   try {

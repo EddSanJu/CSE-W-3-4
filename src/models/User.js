@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const { isEmail } = require('validator');
+const bcrypt = require('bcrypt');
 
 /**
  * @openapi
@@ -68,6 +69,19 @@ const userSchema = new mongoose.Schema({
   city: {
     type: String,
   },
+  password: {
+    type: String,
+  },
+  githubId: { 
+    type: String,
+    required: false
+  },
+});
+
+userSchema.pre('save', async function (next) {
+  if (!this.isModified('password')) return next();
+  this.password = await bcrypt.hash(this.password, 10);
+  next();
 });
 
 module.exports = mongoose.model("User", userSchema);
